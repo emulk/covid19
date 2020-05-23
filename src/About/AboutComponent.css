@@ -26,3 +26,51 @@
     cursor: pointer;
     
 }
+
+.iframeCode{
+    margin:10px;
+    background-color: #ffffff;
+    border-radius: 8px;    
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.iframeCodeTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.iframeCodeStyle{
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+
+}
+
+.emailStyleSection{
+    margin:10px;
+    background-color: #ffffff;
+    border-radius: 8px;    
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.emailStyleSectionTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.emailStyle{
+    font-style: italic;
+    font-size: 1.2em;
+    font-weight: bold;
+}

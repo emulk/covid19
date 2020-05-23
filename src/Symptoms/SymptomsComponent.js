@@ -216,46 +216,46 @@ class Symptoms extends Component {
             return (
                 <Col>
                     <Row>
-                        Self-isolation at home has been recommended those who suspect they have been infected.
-                </Row>
+                        <li>Self-isolation at home has been recommended those who suspect they have been infected.</li>
+                    </Row>
                     <Row>
-                        Public health agencies have issued self-isolation instructions that include notification of healthcare providers by phone and restricting all activities outside of the home, except for getting medical care.
-                </Row>
+                        <li>Public health agencies have issued self-isolation instructions that include notification of healthcare providers by phone and restricting all activities outside of the home, except for getting medical care.
+               </li>
+                    </Row>
                     <Row>
-                        Do not go to work, school, or public areas. Avoid using public transportation, ride-sharing, or taxis
-                </Row>
+                        <li>Do not go to work, school, or public areas. Avoid using public transportation, ride-sharing, or taxis</li>
+                    </Row>
                     <Row>
-                        Those who have recently travelled to a country with widespread transmission or who have been in direct contact with someone diagnosed with COVID-19 have also been asked by some government health agencies to self-quarantine or practise social distancing for 14 days from the time of last possible exposure.
-                </Row>
+                        <li>Those who have recently travelled to a country with widespread transmission or who have been in direct contact with someone diagnosed with COVID-19 have also been asked by some government health agencies to self-quarantine or practise social distancing for 14 days from the time of last possible exposure.
+                </li>
+                    </Row>
                     <Row>
-                        Attempts to relieve the symptoms may include taking regular (over-the-counter) cold medications, drinking fluids, and resting. Depending on the severity, oxygen therapy, intravenous fluids, and breathing support may be required.
-                </Row>
+                        <li>Attempts to relieve the symptoms may include taking regular (over-the-counter) cold medications, drinking fluids, and resting. Depending on the severity, oxygen therapy, intravenous fluids, and breathing support may be required.</li>
+                    </Row>
                 </Col>
             );
         } else if (this.state.TotalPercentage > 0) {
             return (
                 <Col>
                     <Row>
-                        Wear a mask.
+                        <li> Wear a mask.</li>
                     </Row>
                     <Row>
-                        Avoid touching the eyes, nose, or mouth with unwashed hands
+                        <li>Avoid touching the eyes, nose, or mouth with unwashed hands.</li>
                     </Row>
                     <Row>
-                        Wash your hands, use an alcohol-based hand sanitiser with at least 60% alcohol by volume (or 120 proof) when soap and water are not readily available.
+                        <li> Wash your hands, use an alcohol-based hand sanitiser with at least 60% alcohol by volume (or 120 proof) when soap and water are not readily available.</li>
                     </Row>
                     <Row>
-                        Stay at least 6 feet (about 2 arms’ length) from other people
+                        <li>Stay at least 6 feet (about 2 arms’ length) from other people.</li>
                     </Row>
                     <Row>
-                        Do not gather in groups
+                        <li> Do not gather in groups.</li>
                     </Row>
                     <Row>
-                        Stay out of crowded places and avoid mass gatherings
+                        <li>Stay out of crowded places and avoid mass gatherings.</li>
                     </Row>
-
                 </Col >
-
 
             );
         }

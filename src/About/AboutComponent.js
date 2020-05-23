@@ -73,6 +73,48 @@ class About extends Component {
                         </Col>
                     </Row>
 
+                    <Row>
+
+                        <Col>
+                        </Col>
+                        <Col className="iframeCode">
+                            <Row>
+                                <Col className="iframeCodeTitle">
+                                    Add the iframe to your website, copy the following code:
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="iframeCodeStyle">
+                                    {'<iframe src="https://www.ncovid19.it" width="100%" height="900" title="Covid19 Real Time News"></iframe>'}
+                                </Col>
+
+                            </Row>
+                        </Col>
+                        <Col></Col>
+
+                    </Row>
+
+                    <Row>
+
+                        <Col>
+                        </Col>
+                        <Col className="emailStyleSection">
+                            <Row>
+                                <Col className="emailStyleSectionTitle">
+                                    Do you have any idea or want to collaborate, write me on:
+                         </Col>
+                            </Row>
+                            <Row>
+                                <Col className="emailStyle">
+                                    info@elegantweb.it
+                                </Col>
+
+                            </Row>
+                        </Col>
+                        <Col></Col>
+
+                    </Row>
+
                 </Col>
 
             </Row >
