@@ -1,0 +1,25 @@
+.europeTableCountrys{
+    background-color: #ffffff;  
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.europTable-wrap{
+    overflow-y: auto;
+    width: 100%;
+}
+
+.tableEuropeanTitle{
+    font-family: 'Prompt',Georgia,  Times, serif;
+    font-size: 2em;
+    font-weight: bold;
+    color:#6236ff;
+    
+}
+
+.tableEuropeanCol{
+    border-radius: 8px;     
+    margin-top: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}

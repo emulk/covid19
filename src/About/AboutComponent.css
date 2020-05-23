@@ -1,0 +1,28 @@
+
+.socialRowAbout{
+    margin:10px;
+    background-color: #ffffff;
+    border-radius: 8px;    
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.shareAboutTitle{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Prompt',Georgia,  Times, serif;
+}
+
+
+.socialIconAbout{
+    font-size: 2em;
+}
+
+.buymeacoffee{
+    margin:10px;
+    padding: 10px;
+}
+
+.socialIconAbout:hover{
+    cursor: pointer;
+    
+}

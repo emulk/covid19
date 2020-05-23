@@ -1,0 +1,43 @@
+.cases{
+    width:100% !important;
+    text-align: center !important;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.titleCases{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.numberConfirmedCases{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fd4e70;
+}
+
+.numberActiveCases{
+    font-weight: bold;
+    font-size: 1.5em;
+    color:#ff761c;
+}
+
+.recoveredActiveCases{
+    font-weight: bold;
+    font-size: 1.5em;
+    color:#6ad300;
+}
+
+.deathCases{
+    font-weight: bold;
+    font-size: 1.5em;
+    color:#9374ff;
+}
+
+.percentCases{
+    font-size: 10pt;
+    font-weight: bold;
+}

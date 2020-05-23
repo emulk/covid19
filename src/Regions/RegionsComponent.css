@@ -1,0 +1,24 @@
+.tableRegionTitle{
+    font-family: 'Prompt',Georgia,  Times, serif;
+    width: 100%;    
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.regionSection{
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;    
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.selctionRegionTable{
+    height: auto !important;;
+}
+
+.selctionRegionTable:hover{
+    cursor:pointer;
+}

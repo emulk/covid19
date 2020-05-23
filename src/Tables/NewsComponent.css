@@ -1,0 +1,50 @@
+
+.newComponentStyle{
+    width:100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;    
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.sourceNameInfo{
+    font-size: 7pt;;
+}
+
+.sourceNameTitle{
+    font-size: 10pt;
+    font-weight: bold;
+    color: #6236ff;
+}
+
+.sourcePublishedAt{
+    font-size: 6pt;
+    text-align: right;
+}
+
+  .rowTableNews{
+      text-align: center;
+      margin: 0px;
+      margin:auto !important;
+      padding-bottom:5px ;
+  }
+
+  .singleRowNews{
+    box-shadow: 0 8px 8px -8px rgba(0,0,0,.075)!important;
+  }
+
+  .headerStyle{
+      font-family: 'Prompt',Georgia,  Times, serif;
+  }
+
+  .sourceNameInfo,.sourcePublishedAt{
+      color: black;
+  }
+
+  a, a:hover {
+    text-decoration: none !important; /* no underline */
+    text-decoration: inherit !important;
+    color: inherit !important;
+    width:100%;
+
+  }
