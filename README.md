@@ -13,7 +13,7 @@ Coronavirus disease situation dashboard presents official daily counts of COVID-
 
 Covid19  up-to-date news coverage, aggregated from sources all over the world by www.ncovid19.it .
 
-Finde more about the Vaccine in development, actualy there are more then 115 Vaccine in development, find more about it on www.ncovid19.it
+Finde more about the Coronavirus Vaccine in development, actualy there are more then 115 covid19 Vaccine in development, find more about it on www.ncovid19.it
 
 
 
