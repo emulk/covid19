@@ -27,22 +27,18 @@ class StatesNumbersComponent extends Component {
                     return (
                         <tr key={index} >
                             <td>{Country}</td>
-                            <td>{Continent}</td>
-                            <td>{Population}</td>
-                            <td>{TotalCases}</td>
-                            <td>{ActiveCases}</td>
-                            <td>{NewCases}</td>
-                            <td>{TotalRecovered}</td>
-                            <td>{TotalDeaths}</td>
-                            <td>{NewDeaths}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
                         </tr>
                     )
                 }
             })
         }
     }
-
-
 
     render() {
         return (
@@ -57,13 +53,11 @@ class StatesNumbersComponent extends Component {
                             <thead>
                                 <tr>
                                     <th>Country</th>
-                                    <th>Continent</th>
-                                    <th>Population</th>
-                                    <th>Total Cases</th>
-                                    <th>Active Cases</th>
+                                    <th>Confirmed</th>
+                                    <th>Active</th>
                                     <th>New Cases</th>
-                                    <th>Total Recovered</th>
-                                    <th>Total Deceased</th>
+                                    <th>Recovered</th>
+                                    <th>Deceased</th>
                                     <th>New Deceased</th>
                                 </tr>
                             </thead>

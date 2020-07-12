@@ -13,10 +13,14 @@
     font-size: 1.2em;
 }
 
+.DataUpdateStyle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .numberConfirmedCases{
     font-weight: bold;
     font-size: 1.5em;
-    color: #fd4e70;
+    color:#9374ff;
 }
 
 .numberActiveCases{
@@ -34,7 +38,7 @@
 .deathCases{
     font-weight: bold;
     font-size: 1.5em;
-    color:#9374ff;
+    color: #fd4e70;
 }
 
 .percentCases{

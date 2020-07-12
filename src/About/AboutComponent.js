@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import { Row, Col, Table, Form } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Subscription from '../Subscription/SubscriptionComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { faFacebook, faInstagram, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import './AboutComponent.css';
 
 
@@ -26,9 +27,6 @@ class About extends Component {
         document.body.removeChild(input);
     }
 
-
-
-
     render() {
         return (
             <Row>
@@ -48,7 +46,7 @@ class About extends Component {
                                     Share
                                 </Col>
                             </Row>
-                            <Row >
+                            <Row className='aboutSocialIconRow'>
                                 <Col className="socialIconAbout" onClick={this.copyLinkToClipboard}>
                                     <FontAwesomeIcon icon={faLink} />
                                 </Col>
@@ -65,6 +63,26 @@ class About extends Component {
                                 <Col className="socialIconAbout">
                                     <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.ncovid19.it/" target="_blank">
                                         <FontAwesomeIcon icon={faLinkedin} />
+                                    </a>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                        </Col>
+                        <Col className="socialRowAbout">
+                            <Row>
+                                <Col className="downloadAPPAboutTitle">
+                                    Download the app on Google Play
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a href="https://play.google.com/store/apps/details?id=it.elegantweb.immunitydashboard" target="_blank">
+                                        <img src={process.env.PUBLIC_URL + '/googlePlay.png'} className="googlePlayImage"/>
                                     </a>
                                 </Col>
                             </Row>
@@ -91,11 +109,9 @@ class About extends Component {
                             </Row>
                         </Col>
                         <Col></Col>
-
                     </Row>
-
+                    <Subscription />
                     <Row>
-
                         <Col>
                         </Col>
                         <Col className="emailStyleSection">
@@ -112,11 +128,8 @@ class About extends Component {
                             </Row>
                         </Col>
                         <Col></Col>
-
                     </Row>
-
                 </Col>
-
             </Row >
         );
     }

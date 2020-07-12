@@ -236,7 +236,7 @@ class Symptoms extends Component {
             );
         } else if (this.state.TotalPercentage > 0) {
             return (
-                <Col>
+                <Col className="descriptionSymptoms">
                     <Row>
                         <li> Wear a mask.</li>
                     </Row>
@@ -267,21 +267,19 @@ class Symptoms extends Component {
 
                 <Row className='symptomsTitle'>
                     How do I know if I am infected?
-                    </Row>
+                </Row>
                 <Row></Row>
                 <Row className='symptomsSubTitle'>
                     <Col>
                         Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and breathing difficulties. In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome, kidney failure and even death.
-                        </Col>
+                    </Col>
                 </Row>
                 <Row>
                     Symptoms may appear <b>2-14 days after exposure to the virus</b>.
                 </Row>
                 <Row className="symptomsTablePercentage">
                     <Col>
-
                         <Table hover>
-
                             <thead>
                                 <tr>
                                     <th className="symptomsColumn1">Symptom</th>

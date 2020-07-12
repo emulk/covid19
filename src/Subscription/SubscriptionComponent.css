@@ -1,0 +1,35 @@
+.subscriptionText{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.subscriptionStyleCol{
+    margin-top: 10px;
+    background-color: #ffffff !important;
+    border-radius: 8px;    
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.subscriptionEmailInput{
+    width: 100% !important;
+    display: block;
+    padding: 10px 0;
+    margin: 0;
+    border: none !important;
+    border-bottom: 1px solid #000 !important;
+    background: 0 0;    
+    color: #4e4e4e;
+}
+
+.subscriptionButtonColumn{
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-bottom: 10px;
+}
+
+.validSubscription{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}

@@ -26,8 +26,8 @@ class NewsComponent extends Component {
             return this.state.dataInfo.map((dataInfo, index) => {
                 if (count < 20) {
                     count++
-                    // eslint-disable-next-line
-                    const { author, content, description, publishedAt, source, title, url, urlToImage } = dataInfo
+                    const { author, content, description, publishedAt, source, title, url, urlToImage } = dataInfo;
+                    var _titleToShow = title.split("-")[0];
                     return (
                         <Row key={index} className="rowTableNews">
                             <Col>
@@ -39,7 +39,7 @@ class NewsComponent extends Component {
 
                                                 <Col className="sourcePublishedAt">{publishedAt}</Col>
                                             </Row>
-                                            <Row className="sourceNameTitle">{title}</Row>
+                                            <Row className="sourceNameTitle">{_titleToShow}</Row>
                                         </a>
                                     </Col>
                                 </Row>
@@ -50,7 +50,6 @@ class NewsComponent extends Component {
 
             })
         }
-
     }
 
 
@@ -67,10 +66,10 @@ class NewsComponent extends Component {
 
         if (data.status === 'ok' && data.totalResults > 0) {
             var dataResult = [];
-            if(this.state.dataInfo.length > 0){
-                dataResult =dataResult.concat(this.state.dataInfo);
+            if (this.state.dataInfo.length > 0) {
+                dataResult = dataResult.concat(this.state.dataInfo);
             }
-            dataResult =dataResult.concat(data.articles);
+            dataResult = dataResult.concat(data.articles);
             this.setState({
                 dataInfo: dataResult
             })
@@ -89,8 +88,8 @@ class NewsComponent extends Component {
 
         if (data.status === 'ok' && data.totalResults > 0) {
             var dataResult = [];
-            if(this.state.dataInfo.length > 0){
-                dataResult= dataResult.concat(this.state.dataInfo);
+            if (this.state.dataInfo.length > 0) {
+                dataResult = dataResult.concat(this.state.dataInfo);
             }
             dataResult = dataResult.concat(data.articles);
             this.setState({

@@ -15,7 +15,8 @@
     font-family: 'Prompt',Georgia,  Times, serif;
     font-size: 1em;
     padding: 5px;
-    margin:5px;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .symptomsTablePercentage{
@@ -34,4 +35,9 @@
     text-align: left;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.descriptionSymptoms{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

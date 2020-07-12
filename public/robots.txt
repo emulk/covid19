@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+Sitemap: https://www.ncovid19.it/sitemap.xml
+
 User-agent: *
 Disallow:

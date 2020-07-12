@@ -20,5 +20,75 @@
 }
 
 .selctionRegionTable:hover{
+}
+
+.regionSingleOptionSelection:hover{
     cursor:pointer;
+    border: 2px solid rgba(0,0,0,.075);
+    background-color: rgba(0,0,0,.075);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+
+.newDecesedNumbers{
+    color: #fd4e70;
+    font-weight: bold;
+}
+
+.newCasesNumbers, .activeCasesNumbers{
+    color:#ff761c;
+    font-weight: bold;
+}
+
+.testCasesNumbers, .recoveredCasesNumbers{
+    color:#6ad300;
+    font-weight: bold;
+}
+
+.totalConfirmedNumbers{
+    color:#9374ff;
+    font-weight: bold;
+}
+
+.preferedTableEuropeanCol{
+    border-radius: 8px;     
+    margin-top: 10px;
+    margin-bottom: 1em;
+    background-color: #ffffff;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    height: auto !important;
+}
+
+
+
+.preferedTableCountrys{
+height: auto !important;
+}
+
+.preferedTableCountrysSpan {
+    height: auto !important;
+    width: 100%;
+}
+
+.preferredStatesTitle{
+    
+    font-family: 'Prompt',Georgia,  Times, serif;
+    font-size: 2em;
+    font-weight: bold;
+    color:#6236ff;
+}
+
+.RemovePreferenceStar{
+    color: gold;    
+    cursor: pointer !important;
+}
+
+.addPreferenceStar{    
+    cursor: pointer !important;
+}
+
+.tablePreferredRegionsCol{
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

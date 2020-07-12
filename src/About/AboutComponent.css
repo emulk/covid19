@@ -1,9 +1,16 @@
 
 .socialRowAbout{
-    margin:10px;
+    margin-top:10px;
+    margin-bottom:10px;
     background-color: #ffffff;
     border-radius: 8px;    
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    padding-bottom: 10px;
+}
+
+.googlePlayImage{
+    width: 80%;
+    height: auto;
 }
 
 .shareAboutTitle{
@@ -12,13 +19,23 @@
     font-family: 'Prompt',Georgia,  Times, serif;
 }
 
+.downloadAPPAboutTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Prompt',Georgia,  Times, serif;
+}
+
+.aboutSocialIconRow{
+    display: flex !important;
+}
 
 .socialIconAbout{
     font-size: 2em;
 }
 
 .buymeacoffee{
-    margin:10px;
+    margin-top:10px;
+    margin-bottom:10px;
     padding: 10px;
 }
 
@@ -28,7 +45,8 @@
 }
 
 .iframeCode{
-    margin:10px;
+    margin-top:10px;
+    margin-bottom:10px;
     background-color: #ffffff;
     border-radius: 8px;    
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
@@ -58,7 +76,8 @@
 }
 
 .emailStyleSection{
-    margin:10px;
+    margin-top:10px;
+    margin-bottom:10px;
     background-color: #ffffff;
     border-radius: 8px;    
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;

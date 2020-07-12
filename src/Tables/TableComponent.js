@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { withRouter, Switch, Route } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap';
@@ -9,14 +8,18 @@ import EuropeNumbersComponent from './EuropeNumbersComponent';
 import Symptoms from '../Symptoms/SymptomsComponent';
 import Regions from '../Regions/RegionsComponent';
 import About from '../About/AboutComponent';
+import Map from '../Map/MapComponent';
+import Globe from '../Globe/GlobeComponent';
+import Vaccine from '../Vaccine/VaccineComponent';
+import NotificationsComponent from '../Notifications/NotificationsComponent';
 import './StatesNumbersComponent.css';
-
 
 
 class TableComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            UpdatedTime: '',
             TotalConfirmedCases: '',
             TotalActiveCases: '',
             PercentageActiveCases: '',
@@ -28,30 +31,33 @@ class TableComponent extends Component {
             EuropeData: '',
             UsaData: '',
             AsiaData: '',
-            AfricaData: ''
+            AfricaData: '',
+            OceaniaData: ''
         };
-
-
-        this.getCasesData = this.getCasesData.bind(this);
+        this.getUpdatedTimeData = this.getUpdatedTimeData.bind(this);
         this.getReportData = this.getReportData.bind(this);
     }
 
     componentWillMount() {
-        this.getCasesData();
+        this.getUpdatedTimeData();
         this.getReportData();
     }
 
-    getCasesData() {
-        let url = "https://www.ncovid19.it/News/Cases.php";
-        let data = undefined;
+    getUpdatedTimeData() {
+        let url = "https://www.ncovid19.it/News/GetUpdatedTime.php";
+        let updatedTime = undefined;
 
         fetch(url)
-            .then(response => response.json())
+            .then(response => response.text())
             .then(
-                data => this.handleData(data)
+                updatedTime => this.handleStateUpdateData(updatedTime)
             );
+    }
 
-
+    handleStateUpdateData(updatedTime) {
+        this.setState({
+            UpdatedTime: updatedTime
+        })
     }
 
     getReportData() {
@@ -61,14 +67,15 @@ class TableComponent extends Component {
         fetch(url)
             .then(response => response.json())
             .then(
-                data => this.getEuropeData(data.reports[0].table[1])
+                data => this.handleData(data)
+
             );
     }
 
 
     handleData(data) {
         if (data) {
-
+            this.getEuropeData(data.reports[0].table[1]);
             var _totalConfirmedCases = data.reports[0].cases;
             var _totalRecoveredCases = data.reports[0].recovered;
             var _totalDecesedCases = data.reports[0].deaths;
@@ -99,6 +106,7 @@ class TableComponent extends Component {
             var _usaData = [];
             var _asiaData = [];
             var _africaData = [];
+            var _oceaniaData = [];
             data.map((data, index) => {
                 const { Continent } = data //destructuring
                 if (Continent === 'Europe') {
@@ -109,6 +117,8 @@ class TableComponent extends Component {
                     _asiaData.push(data);
                 } else if (Continent === 'Africa') {
                     _africaData.push(data);
+                } else if (Continent === 'Australia\/Oceania') {
+                    _oceaniaData.push(data);
                 }
             });
 
@@ -117,6 +127,7 @@ class TableComponent extends Component {
                 UsaData: _usaData,
                 AsiaData: _asiaData,
                 AfricaData: _africaData,
+                OceaniaData: _oceaniaData,
                 AllData: data
             })
         }
@@ -133,8 +144,6 @@ class TableComponent extends Component {
         return parseFloat(finalResult);
     }
 
-
-
     render() {
         return (
             <Switch>
@@ -142,11 +151,12 @@ class TableComponent extends Component {
                     <Row>
                         <Col>
                             <Row>
-                                <CasesComponent TotalConfirmedCases={this.state.TotalConfirmedCases} TotalRecoveredCases={this.state.TotalRecoveredCases} PercentageRecoveredCases={this.state.PercentageRecoveredCases} TotalDecesdCases={this.state.TotalDecesdCases}
+                                <CasesComponent UpdatedTime={this.state.UpdatedTime} TotalConfirmedCases={this.state.TotalConfirmedCases} TotalRecoveredCases={this.state.TotalRecoveredCases} PercentageRecoveredCases={this.state.PercentageRecoveredCases} TotalDecesdCases={this.state.TotalDecesdCases}
                                     PercentageTotalDecesdCases={this.state.PercentageTotalDecesdCases} TotalActiveCases={this.state.TotalActiveCases} PercentageActiveCases={this.state.PercentageActiveCases} />
                             </Row>
                             <Row>
                                 <Col className=" col-md-3">
+                                    <NotificationsComponent />
                                     <NewsComponent />
                                 </Col>
                                 <Col className="col-md-9">
@@ -165,12 +175,15 @@ class TableComponent extends Component {
                             <Row>
                                 <EuropeNumbersComponent AllData={this.state.AfricaData} Title='Africa Stats' />
                             </Row>
+                            <Row>
+                                <EuropeNumbersComponent AllData={this.state.OceaniaData} Title='Oceania Stats' />
+                            </Row>
                         </Col>
                     </Row>
                 </Route>
 
                 <Route path="/Regions">
-                    <Regions EuropeData={this.state.EuropeData} AmericaData={this.state.UsaData} AsiaData={this.state.AsiaData} AfricaData={this.state.AfricaData} />
+                    <Regions EuropeData={this.state.EuropeData} AmericaData={this.state.UsaData} AsiaData={this.state.AsiaData} AfricaData={this.state.AfricaData} OceaniaData={this.state.OceaniaData} />
                 </Route>
                 <Route path="/Symptoms">
                     <Symptoms />
@@ -178,11 +191,18 @@ class TableComponent extends Component {
                 <Route path="/About">
                     <About />
                 </Route>
+                <Route path="/Globe">
+                    <Globe />
+                </Route>
+                <Route path="/Map">
+                    <Map AllData={this.state.AllData} />
+                </Route>
+                <Route path="/Vaccine">
+                    <Vaccine />
+                </Route>
             </Switch>
         );
     }
-
 }
-
 
 export default withRouter(TableComponent);

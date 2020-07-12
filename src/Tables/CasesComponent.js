@@ -25,6 +25,9 @@ class CasesComponent extends Component {
                         </Col>
                     </Row>
                     <Row className="percentCases">
+                        <Col className="DataUpdateStyle">
+                            update: {this.props.UpdatedTime}
+                        </Col>
                     </Row>
                 </Col>
                 <Col className="cases">

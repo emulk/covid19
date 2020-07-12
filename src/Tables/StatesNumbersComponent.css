@@ -48,3 +48,23 @@
     border-radius: 8px;    
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
+
+.newDecesedNumbers{
+    color: #fd4e70;
+    font-weight: bold;
+}
+
+.newCasesNumbers, .activeCasesNumbers{
+    color:#ff761c;
+    font-weight: bold;
+}
+
+.testCasesNumbers, .recoveredCasesNumbers{
+    color:#6ad300;
+    font-weight: bold;
+}
+
+.totalConfirmedNumbers{
+    color:#9374ff;
+    font-weight: bold;
+}
