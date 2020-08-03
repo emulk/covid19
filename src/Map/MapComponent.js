@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import Chart from "react-google-charts";
 import { Row, Col } from 'react-bootstrap';
+import { withNamespaces } from 'react-i18next';
+import i18n from '../i18n';
 import './MapComponent.css';
 
 class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mapsData: [['Country', 'Total Confirmed Cases']]
+            mapsData: [[i18n.t('Country'), i18n.t('Total Confirmed Cases')]]
         };
         this.populateMaps = this.populateMaps.bind(this);
     }
@@ -16,7 +18,7 @@ class Map extends Component {
     populateMaps() {
         if (this.props.AllData) {
             var _countrysData = [];
-            _countrysData.push(['Country', 'Total Confirmed Cases', 'New Cases']);
+            _countrysData.push([i18n.t('Country'), i18n.t('Total Confirmed Cases'), i18n.t('New Cases')]);
 
             this.props.AllData.map((AllData, index) => {
                 const { ActiveCases, Country, NewCases, NewDeaths, TotalCases, TotalDeaths, TotalRecovered } = AllData //destructuring
@@ -70,4 +72,4 @@ class Map extends Component {
 
 
 
-export default withRouter(Map);
+export default withRouter(withNamespaces()(Map));

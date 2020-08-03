@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Row, Col } from 'react-bootstrap';
+import { withNamespaces } from 'react-i18next';
 import './EuropeNumbersComponent.css';
 
 
@@ -16,7 +17,7 @@ class EuropeNumbersComponent extends Component {
     fillTable() {
         if (this.props.AllData) {
             return this.props.AllData.map((AllData, index) => {
-                const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests } = AllData //destructuring
+                const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests, Unemployment } = AllData //destructuring
 
                 return (
                     <tr key={index} >
@@ -29,6 +30,7 @@ class EuropeNumbersComponent extends Component {
                         <td className="newDecesedNumbers">{TotalDeaths}</td>
                         <td className="newDecesedNumbers">{NewDeaths}</td>
                         <td className="testCasesNumbers">{TotalTests}</td>
+                        <td className="unemploymentNumbers">{Unemployment}</td>
                     </tr>
                 )
             })
@@ -38,25 +40,27 @@ class EuropeNumbersComponent extends Component {
 
 
     render() {
+        const { t } = this.props;
         return (
             <Col className="tableEuropeanCol">
                 <Row className="tableEuropeanTitle">
-                    {this.props.Title}
+                    {t(this.props.Title)}
                 </Row>
                 <Row>
                     <span className="europTable-wrap">
                         <Table responsive className="europeTableCountrys table-hover " >
                             <thead>
                                 <tr>
-                                    <th>Country</th>
-                                    <th>Population</th>
-                                    <th>Confirmed</th>
-                                    <th>Active</th>
-                                    <th>New Cases</th>
-                                    <th>Recovered</th>
-                                    <th>Deceased</th>
-                                    <th>New Deceased</th>
-                                    <th>Tests</th>
+                                    <th>{t('Country')}</th>
+                                    <th>{t('Population')}</th>
+                                    <th>{t('Confirmed')}</th>
+                                    <th>{t('Active')}</th>
+                                    <th>{t('New Cases')}</th>
+                                    <th>{t('Recovered')}</th>
+                                    <th>{t('Deceased')}</th>
+                                    <th>{t('New Deceased')}</th>
+                                    <th>{t('Tests')}</th>
+                                    <th>{t('Unemployment')}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,4 +74,4 @@ class EuropeNumbersComponent extends Component {
     }
 }
 
-export default EuropeNumbersComponent;
+export default withNamespaces()(EuropeNumbersComponent);

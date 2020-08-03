@@ -3,6 +3,7 @@ import { Row, Col} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { withNamespaces } from 'react-i18next';
 import './FooterComponent.css';
 
 
@@ -11,17 +12,22 @@ class Footer extends Component {
         super(props);
         this.state = {
         };
+        this.handle = this.handle.bind(this);
+    }
+
+    handle(){
 
     }
 
     render() {
+        const { t } = this.props;
         return (
             <Row >
                 <Col className="footerStyleCol">
                     <Row>
                         <Col >
                             <Row className='footerTextStyle'>
-                                Designed with <FontAwesomeIcon icon={faHeart} className="footerHeart" /> by <a href='https://www.elegantweb.it' target='_blank' className='footerLink'>Elegantweb.it</a>
+                                {t('Designed with')} <FontAwesomeIcon icon={faHeart} className="footerHeart" /> {t('by')} <a href='https://www.elegantweb.it' target='_blank' className='footerLink'>Elegantweb.it</a>
                             </Row>
                         </Col>
                         <Col >
@@ -59,4 +65,4 @@ class Footer extends Component {
 }
 
 
-export default Footer;
+export default withNamespaces()(Footer);

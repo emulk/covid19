@@ -3,6 +3,8 @@ import { withRouter } from "react-router-dom";
 import { Table, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faBreadSlice } from '@fortawesome/free-solid-svg-icons';
+import { withNamespaces } from 'react-i18next';
+import i18n from '../i18n';
 import './RegionsComponent.css';
 
 
@@ -10,10 +12,13 @@ import './RegionsComponent.css';
 class Regions extends Component {
     constructor(props) {
         super(props);
+
+        var _title = i18n.t('Europe Stats');
+        var _titlePref = i18n.t('Preferences');
         this.state = {
             actualTable: 0,
-            Title: 'Europe Stats',
-            TitlePreference: 'Preferences',
+            Title: _title,
+            TitlePreference: _titlePref,
             isPreferencesTableVisible: false,
             PreferenceStates: []
         };
@@ -55,6 +60,13 @@ class Regions extends Component {
                 isPreferencesTableVisible: true
             })
         }
+
+        var _title = i18n.t('Europe Stats');
+        var _titlePref = i18n.t('Preferences');
+        this.setState({
+            Title: _title,
+            TitlePreference: _titlePref
+        })
     }
 
     getItalyReportData() {
@@ -126,7 +138,7 @@ class Regions extends Component {
             _tempData = this.props.AsiaData;
         } else if (this.state.actualTable === 3) {
             _tempData = this.props.AfricaData;
-        }else if (this.state.actualTable === 4) {
+        } else if (this.state.actualTable === 4) {
             _tempData = this.props.OceaniaData;
         }
 
@@ -180,7 +192,7 @@ class Regions extends Component {
     fillTablePreferences() {
         if (this.state.PreferenceStates.length > 0) {
             return this.state.PreferenceStates.map((AllData, index) => {
-                const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests } = AllData //destructuring
+                const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests, Unemployment } = AllData //destructuring
 
                 return (
                     <tr key={index} >
@@ -194,6 +206,7 @@ class Regions extends Component {
                         <td className="newDecesedNumbers">{TotalDeaths}</td>
                         <td className="newDecesedNumbers">{NewDeaths}</td>
                         <td className="testCasesNumbers">{TotalTests}</td>
+                        <td className="unemploymentNumbers">{Unemployment}</td>
                     </tr>
                 )
             })
@@ -201,7 +214,6 @@ class Regions extends Component {
     }
 
     fillEuropRegionsData(tableData) {
-        debugger;
         if (tableData) {
             return tableData.map((AllData, index) => {
                 var _data = AllData.split(",");
@@ -245,7 +257,7 @@ class Regions extends Component {
 
             if (tableData) {
                 return tableData.map((AllData, index) => {
-                    const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests } = AllData //destructuring
+                    const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests, Unemployment } = AllData //destructuring
 
                     return (
                         <tr key={index} >
@@ -259,6 +271,7 @@ class Regions extends Component {
                             <td className="newDecesedNumbers">{TotalDeaths}</td>
                             <td className="newDecesedNumbers">{NewDeaths}</td>
                             <td className="testCasesNumbers">{TotalTests}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
                         </tr>
                     )
                 })
@@ -268,84 +281,103 @@ class Regions extends Component {
     }
 
     europeData() {
+        var _title = i18n.t('Europe Stats');
+
         this.setState({
             actualTable: 0,
-            Title: 'Europe Stats'
+            Title: _title
         })
     }
 
     americaData() {
 
+        var _title = i18n.t('America Stats');
         this.setState({
             actualTable: 1,
-            Title: 'America Stats'
+            Title: _title
         })
     }
 
     asiaData() {
+        
+        var _title = i18n.t('Asia Stats');
         this.setState({
             actualTable: 2,
-            Title: 'Asia Stats'
+            Title: _title
         })
     }
 
     africaData() {
+        var _title = i18n.t('Africa Stats');
         this.setState({
             actualTable: 3,
-            Title: 'Africa Stats'
+            Title: _title
         })
     }
 
     oceaniaData() {
+        
+        var _title = i18n.t('Oceania Stats');
         this.setState({
             actualTable: 4,
-            Title: 'Oceania Stats'
+            Title: _title
         })
     }
 
     italyData() {
+        
+        var _title = i18n.t('Italy Stats');
         this.setState({
             actualTable: 5,
-            Title: 'Italy Stats'
+            Title: _title
         })
     }
 
     spainData() {
+        
+        var _title = i18n.t('Spain Stats');
         this.setState({
             actualTable: 6,
-            Title: 'Spain Stats'
+            Title: _title
         })
     }
 
     germanyData() {
+        
+        var _title = i18n.t('Germany Stats');
         this.setState({
             actualTable: 7,
-            Title: 'Germany Stats'
+            Title: _title
         })
     }
 
     unitedKingdomData() {
+        
+        var _title = i18n.t('United Kingdom Stats');
         this.setState({
             actualTable: 8,
-            Title: 'United Kingdom Stats'
+            Title: _title
         })
     }
 
     franceData() {
+        
+        var _title = i18n.t('France Stats');
         this.setState({
             actualTable: 9,
-            Title: 'France Stats'
+            Title: _title
         })
     }
 
     render() {
+        const { t } = this.props;
         return (
             <Row>
                 <Col className='col-md-3 regionSection'>
 
                     <Row className="tableRegionTitle">
                         <Col>
-                            Choose the Region
+                            {t('Choose the Region')}
                         </Col>
                     </Row>
                     <Row>
@@ -354,34 +386,34 @@ class Regions extends Component {
 
                             <tbody>
                                 <tr onClick={this.europeData} className="regionSingleOptionSelection">
-                                    <td>Europe Stats</td>
+                                    <td>{t('Europe Stats')}</td>
                                 </tr>
                                 <tr onClick={this.americaData} className="regionSingleOptionSelection">
-                                    <td>America Stats</td>
+                                    <td>{t('America Stats')}</td>
                                 </tr>
                                 <tr onClick={this.asiaData} className="regionSingleOptionSelection">
-                                    <td>Asia Stats</td>
+                                    <td>{t('Asia Stats')}</td>
                                 </tr>
                                 <tr onClick={this.africaData} className="regionSingleOptionSelection">
-                                    <td>Africa Stats</td>
+                                    <td>{t('Africa Stats')}</td>
                                 </tr>
                                 <tr onClick={this.oceaniaData} className="regionSingleOptionSelection">
-                                    <td>Oceania Stats</td>
+                                    <td>{t('Oceania Stats')}</td>
                                 </tr>
                                 <tr onClick={this.italyData} className="regionSingleOptionSelection">
-                                    <td>Italy Stats</td>
+                                    <td>{t('Italy Stats')}</td>
                                 </tr>
                                 <tr onClick={this.spainData} className="regionSingleOptionSelection">
-                                    <td>Spain Stats</td>
+                                    <td>{t('Spain Stats')}</td>
                                 </tr>
                                 <tr onClick={this.germanyData} className="regionSingleOptionSelection">
-                                    <td>Germany Stats</td>
+                                    <td>{t('Germany Stats')}</td>
                                 </tr>
                                 <tr onClick={this.franceData} className="regionSingleOptionSelection">
-                                    <td>France Stats</td>
+                                    <td>{t('France Stats')}</td>
                                 </tr>
                                 <tr onClick={this.unitedKingdomData} className="regionSingleOptionSelection">
-                                    <td>United Kingdom Stats</td>
+                                    <td>{t('United Kingdom Stats')}</td>
                                 </tr>
 
                             </tbody>
@@ -406,15 +438,16 @@ class Regions extends Component {
                                             <Table className="preferedTableCountrys table-hover" >
                                                 <thead>
                                                     <tr>
-                                                        <th colSpan="2">Country</th>
-                                                        <th>Population</th>
-                                                        <th>Confirmed</th>
-                                                        <th>Active</th>
-                                                        <th>New Cases</th>
-                                                        <th>Recovered</th>
-                                                        <th>Deceased</th>
-                                                        <th>New Deceased</th>
-                                                        <th>Tests</th>
+                                                        <th colSpan="2">{t('Country')}</th>
+                                                        <th>{t('Population')}</th>
+                                                        <th>{t('Confirmed')}</th>
+                                                        <th>{t('Active')}</th>
+                                                        <th>{t('New Cases')}</th>
+                                                        <th>{t('Recovered')}</th>
+                                                        <th>{t('Deceased')}</th>
+                                                        <th>{t('New Deceased')}</th>
+                                                        <th>{t('Tests')}</th>
+                                                        <th>{t('Unemployment')}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -440,15 +473,16 @@ class Regions extends Component {
                                         <Table responsive className="europeTableCountrys table-hover " >
                                             <thead>
                                                 <tr>
-                                                    <th colSpan="2">Country</th>
-                                                    <th>Population</th>
-                                                    <th>Confirmed</th>
-                                                    <th>Active</th>
-                                                    <th>New Cases</th>
-                                                    <th>Recovered</th>
-                                                    <th>Deceased</th>
-                                                    <th>New Deceased</th>
-                                                    <th>Tests</th>
+                                                    <th colSpan="2">{t('Country')}</th>
+                                                    <th>{t('Population')}</th>
+                                                    <th>{t('Confirmed')}</th>
+                                                    <th>{t('Active')}</th>
+                                                    <th>{t('New Cases')}</th>
+                                                    <th>{t('Recovered')}</th>
+                                                    <th>{t('Deceased')}</th>
+                                                    <th>{t('New Deceased')}</th>
+                                                    <th>{t('Tests')}</th>
+                                                    <th>{t('Unemployment')}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -460,11 +494,11 @@ class Regions extends Component {
                                         <Table responsive className="europeTableCountrys table-hover " >
                                             <thead>
                                                 <tr>
-                                                    <th >Province</th>
-                                                    <th>Confirmed</th>
-                                                    <th>Active</th>
-                                                    <th>Recovered</th>
-                                                    <th>Deceased</th>
+                                                    <th>{t('Province')}</th>
+                                                    <th>{t('Confirmed')}</th>
+                                                    <th>{t('Active')}</th>
+                                                    <th>{t('Recovered')}</th>
+                                                    <th>{t('Deceased')}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -484,4 +518,4 @@ class Regions extends Component {
     }
 }
 
-export default withRouter(Regions);
+export default withRouter(withNamespaces()(Regions));

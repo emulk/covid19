@@ -38,7 +38,7 @@ class TableComponent extends Component {
         this.getReportData = this.getReportData.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getUpdatedTimeData();
         this.getReportData();
     }

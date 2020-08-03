@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faMobile } from '@fortawesome/free-solid-svg-icons';
+import { withNamespaces } from 'react-i18next';
 import './NotificationsComponent.css';
 
 
@@ -26,6 +27,7 @@ class NotificationsComponent extends Component {
 
 
     render() {
+        const { t } = this.props;
         return (
             <>
                 {
@@ -38,7 +40,7 @@ class NotificationsComponent extends Component {
                                     <Row className="notificationTitle">
                                         <Col className="col-10">
                                             <a href="https://play.google.com/store/apps/details?id=it.elegantweb.immunitydashboard" target="_blank">
-                                            <FontAwesomeIcon className="" icon={faMobile} /> Did you know?
+                                            <FontAwesomeIcon className="" icon={faMobile} /> {t('Did you know?')}
                                             </a>
                                         </Col>
                                         <Col className="clossingColumn col-1" onClick={this.closeNotification}>
@@ -47,7 +49,7 @@ class NotificationsComponent extends Component {
                                     </Row>
                                     <a href="https://play.google.com/store/apps/details?id=it.elegantweb.immunitydashboard" target="_blank">
                                         <Row className="notificationBody">
-                                         You can download the mobile app on Google Play
+                                         {t('You can download the mobile app on Google Play')}
                                     </Row>
                                     </a>
                                 </Col>
@@ -62,4 +64,4 @@ class NotificationsComponent extends Component {
     }
 }
 
-export default NotificationsComponent;
+export default withNamespaces()(NotificationsComponent);

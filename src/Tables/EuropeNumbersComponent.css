@@ -48,6 +48,11 @@ thead th
     font-weight: bold;
 }
 
+.unemploymentNumbers{
+    color: #FF00FF;
+    font-weight: bold;
+}
+
 .totalConfirmedNumbers{
     color:#9374ff;
     font-weight: bold;

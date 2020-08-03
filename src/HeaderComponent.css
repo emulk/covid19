@@ -43,3 +43,11 @@
     display: block;
     padding: .5rem .5rem !important;
 }
+
+.custom-select{
+    
+    background-color: #f0eefd !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important; 
+}

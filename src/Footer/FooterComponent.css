@@ -24,6 +24,8 @@
 .footerHeart{
     color: red;
     font-size: 1.5em;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .footerLink{

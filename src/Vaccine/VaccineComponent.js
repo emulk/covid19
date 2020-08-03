@@ -1,39 +1,34 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import { Row, Col, Table } from 'react-bootstrap';
+import { withNamespaces } from 'react-i18next';
 import './VaccineComponent.css';
-
-
-
-
 
 class Vaccine extends Component {
     constructor(props) {
         super(props);
         this.state = {
         };
-
     }
 
-
-
     render() {
+        const { t } = this.props;
         return (
             <Col className="vaccineComponentStyle">
 
                 <Row className='vaccineTitle'>
                     <Col>
-                        Landscape of COVID-19 candidate vaccines.
+                        {t('Landscape of COVID-19 candidate vaccines.')}
                         </Col>
                 </Row>
                 <Row></Row>
                 <Row className='vaccineSubTitle'>
                     <Col>
-                        10 candidate vaccines in clinical evaluation.
+                        {t('10 candidate vaccines in clinical evaluation.')}
                     </Col>
                 </Row>
                 <Row className="vaccineDescription">
-                    A vaccine to prevent coronavirus disease 2019 (COVID-19) is perhaps the best hope for ending the pandemic. Currently, there is no vaccine to prevent COVID-19, but researchers are racing to create one.
+                    {t('A vaccine to prevent coronavirus disease 2019 (COVID-19) is perhaps the best hope for ending the pandemic. Currently, there is no vaccine to prevent COVID-19, but researchers are racing to create one.')}
                 </Row>
 
                 <Row>
@@ -42,12 +37,12 @@ class Vaccine extends Component {
                             <Table responsive hover className="vaccineTable table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Platform</th>
-                                        <th>Type of candidate vaccine</th>
-                                        <th>Developer</th>
-                                        <th>Coronavirus target</th>
-                                        <th>Current stage of clinical evaluation</th>
-                                        <th>Same platform for non-Coronavirus candidates</th>
+                                        <th>{t('Platform')}</th>
+                                        <th>{t('Type of candidate vaccine')}</th>
+                                        <th>{t('Developer')}</th>
+                                        <th>{t('Coronavirus target')}</th>
+                                        <th>{t('Current stage of clinical evaluation')}</th>
+                                        <th>{t('Same platform for non-Coronavirus candidates')}</th>
                                     </tr>
                                 </thead>
 
@@ -139,22 +134,22 @@ class Vaccine extends Component {
                     </Col>
                 </Row>
                 <Row className="vaccineDescription">
-                    155 candidate vaccines in preclinical evaluation
+                    {t('155 candidate vaccines in preclinical evaluation')}
                         </Row>
                 <Row className="vaccineSubTitle">
-                    Coronavirus vaccine challenges
+                    {('Coronavirus vaccine challenges')}
                 </Row>
                 <Row className="vaccineDescription">
-                    Past research on vaccines for coronaviruses has also identified some challenges to developing a COVID-19 vaccine, including:
+                    {t('Past research on vaccines for coronaviruses has also identified some challenges to developing a COVID-19 vaccine, including:')}
                 </Row>
                 <Row>
                     <Col>
                         <Row className="vaccineDescription">
 
-                            <li><b>Ensuring vaccine safety.</b></li>
+                            <li><b>{t('Ensuring vaccine safety.')}</b></li>
                         </Row>
                         <Row className="vaccineDescription">
-                            Several vaccines for SARS have been tested in animals. Most of the vaccines improved the animals' survival but didn't prevent infection. Some vaccines also caused complications, such as lung damage. A COVID-19 vaccine will need to be thoroughly tested to make sure it's safe for humans.
+                            {t("Several vaccines for SARS have been tested in animals. Most of the vaccines improved the animals' survival but didn't prevent infection. Some vaccines also caused complications, such as lung damage. A COVID-19 vaccine will need to be thoroughly tested to make sure it's safe for humans.")}
                         </Row>
                     </Col>
                     <Col>
@@ -165,19 +160,19 @@ class Vaccine extends Component {
                     </Col>
                     <Col>
                         <Row className="vaccineDescription">
-                            <li><b>Providing long-term protection.</b></li>
+                            <li><b>{t('Providing long-term protection.')}</b></li>
                         </Row>
                         <Row className="vaccineDescription">
-                            After infection with coronaviruses, re-infection with the same virus — though usually mild and only happening in a fraction of people — is possible after a period of months or years. An effective COVID-19 vaccine will need to provide people with long-term infection protection.
+                            {t('After infection with coronaviruses, re-infection with the same virus — though usually mild and only happening in a fraction of people — is possible after a period of months or years. An effective COVID-19 vaccine will need to provide people with long-term infection protection.')}
                      </Row>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <Row className="vaccineDescription">
-                            <li><b>Protecting older people.</b></li></Row>
+                            <li><b>{t('Protecting older people.')}</b></li></Row>
                         <Row className="vaccineDescription">
-                            People older than age 50 are at higher risk of severe COVID-19. But older people usually don't respond to vaccines as well as younger people. An ideal COVID-19 vaccine would work well for this age group.
+                            {t("People older than age 50 are at higher risk of severe COVID-19. But older people usually don't respond to vaccines as well as younger people. An ideal COVID-19 vaccine would work well for this age group.")}
                         </Row>
                     </Col>
                     <Col>
@@ -194,12 +189,12 @@ class Vaccine extends Component {
                             <Table responsive hover className="vaccineTable table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Platform</th>
-                                        <th>Type of candidate vaccine</th>
-                                        <th>Developer</th>
-                                        <th>Coronavirus target</th>
-                                        <th>Current stage of clinical evaluation</th>
-                                        <th>Same platform for non-Coronavirus candidates</th>
+                                        <th>{t('Platform')}</th>
+                                        <th>{t('Type of candidate vaccine')}</th>
+                                        <th>{t('Developer')}</th>
+                                        <th>{t('Coronavirus target')}</th>
+                                        <th>{t('Current stage of clinical evaluation')}</th>
+                                        <th>{t('Same platform for non-Coronavirus candidates')}</th>
                                     </tr>
                                 </thead>
 
@@ -459,4 +454,4 @@ class Vaccine extends Component {
 
 
 
-export default withRouter(Vaccine);
+export default withRouter(withNamespaces()(Vaccine));

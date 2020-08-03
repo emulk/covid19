@@ -54,6 +54,11 @@
     font-weight: bold;
 }
 
+.unemploymentNumbers{
+    color: #FF00FF;
+    font-weight: bold;
+}
+
 .newCasesNumbers, .activeCasesNumbers{
     color:#ff761c;
     font-weight: bold;

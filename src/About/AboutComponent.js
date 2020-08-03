@@ -5,6 +5,7 @@ import Subscription from '../Subscription/SubscriptionComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { withNamespaces } from 'react-i18next';
 import './AboutComponent.css';
 
 
@@ -28,6 +29,7 @@ class About extends Component {
     }
 
     render() {
+        const { t } = this.props;
         return (
             <Row>
                 <Col>
@@ -43,7 +45,7 @@ class About extends Component {
                         <Col className="socialRowAbout">
                             <Row >
                                 <Col className="shareAboutTitle">
-                                    Share
+                                    {t('Share')}
                                 </Col>
                             </Row>
                             <Row className='aboutSocialIconRow'>
@@ -76,7 +78,7 @@ class About extends Component {
                         <Col className="socialRowAbout">
                             <Row>
                                 <Col className="downloadAPPAboutTitle">
-                                    Download the app on Google Play
+                                    {t('Download the app on Google Play')}
                                 </Col>
                             </Row>
                             <Row>
@@ -98,7 +100,7 @@ class About extends Component {
                         <Col className="iframeCode">
                             <Row>
                                 <Col className="iframeCodeTitle">
-                                    Add the iframe to your website, copy the following code:
+                                    {t('Add the iframe to your website, copy the following code:')}
                                 </Col>
                             </Row>
                             <Row>
@@ -117,7 +119,7 @@ class About extends Component {
                         <Col className="emailStyleSection">
                             <Row>
                                 <Col className="emailStyleSectionTitle">
-                                    Do you have any idea or want to collaborate, write me on:
+                                    {t('Do you have any idea or want to collaborate, write me on:')}
                          </Col>
                             </Row>
                             <Row>
@@ -138,4 +140,4 @@ class About extends Component {
 
 
 
-export default withRouter(About);
+export default withNamespaces()(withRouter(About));

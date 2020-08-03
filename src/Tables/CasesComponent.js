@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { withNamespaces } from 'react-i18next';
 import './CasesComponent.css';
 
 
@@ -11,12 +12,13 @@ class CasesComponent extends Component {
     }
 
     render() {
+        const { t } = this.props;
         return (
             <>
                 <Col className="cases ">
                     <Row className="titleCases">
                         <Col>
-                            Total Confirmed Cases
+                            {t('Total Confirmed Cases')}
                         </Col>
                     </Row>
                     <Row className="numberConfirmedCases">
@@ -26,14 +28,14 @@ class CasesComponent extends Component {
                     </Row>
                     <Row className="percentCases">
                         <Col className="DataUpdateStyle">
-                            update: {this.props.UpdatedTime}
+                            {t('update')} {this.props.UpdatedTime}
                         </Col>
                     </Row>
                 </Col>
                 <Col className="cases">
                     <Row className="titleCases">
                         <Col>
-                            Active Cases
+                            {t('Active Cases')}
                         </Col>
                     </Row>
                     <Row className="numberActiveCases">
@@ -50,7 +52,7 @@ class CasesComponent extends Component {
                 <Col className="cases">
                     <Row className="titleCases">
                         <Col>
-                            Recovered Cases
+                            {t('Recovered Cases')}
                         </Col>
                     </Row>
                     <Row className="recoveredActiveCases">
@@ -67,7 +69,7 @@ class CasesComponent extends Component {
                 <Col className="cases">
                     <Row className="titleCases">
                         <Col>
-                            Total Deceased
+                            {t('Total Deceased')}
                         </Col>
                     </Row>
                     <Row className="deathCases">
@@ -86,4 +88,4 @@ class CasesComponent extends Component {
     }
 }
 
-export default CasesComponent;
+export default withNamespaces()(CasesComponent);

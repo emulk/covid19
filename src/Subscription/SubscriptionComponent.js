@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import { withNamespaces } from 'react-i18next';
 import './SubscriptionComponent.css';
 
 
@@ -37,13 +38,14 @@ class Subscription extends Component {
     }
 
     render() {
+        const { t } = this.props;
         return (
             <Row >
                 <Col></Col>
                 <Col className="subscriptionStyleCol">
                     <Row className="subscriptionText">
                         <Col>
-                            SIGN UP FOR COVID-19 UPDATES
+                            {t('SIGN UP FOR COVID-19 UPDATES')}
                         </Col>
                     </Row>
                     <Row >
@@ -53,12 +55,12 @@ class Subscription extends Component {
                     </Row>
                     <Row>
                         <Col className='subscriptionButtonColumn'>
-                            <Button onClick={this.signUpSubscription}>SIGN UP</Button>
+                            <Button onClick={this.signUpSubscription}>{t('SIGN UP')}</Button>
                         </Col>
                     </Row>
                     <Row>
                         {this.state.isValidSubscription &&
-                            (<Col className="validSubscription">Thank You! <br />Your subscription has been confirmed</Col>)
+                            (<Col className="validSubscription">{t('Thank You!')} <br />{t('Your subscription has been confirmed')}</Col>)
                         }
                     </Row>
                 </Col>
@@ -70,4 +72,4 @@ class Subscription extends Component {
 
 
 
-export default Subscription;
+export default withNamespaces()(Subscription);
