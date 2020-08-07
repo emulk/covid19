@@ -61,7 +61,9 @@ class TableComponent extends Component {
     }
 
     getReportData() {
-        let url = "https://www.ncovid19.it/News/AllReports.php";
+        //let url = "https://www.ncovid19.it/News/AllReports.php";
+
+        let url = "http://localhost/covid19api/api/v1/AllReports.php";
         let data = undefined;
 
         fetch(url)
@@ -74,6 +76,7 @@ class TableComponent extends Component {
 
 
     handleData(data) {
+        debugger;
         if (data) {
             this.getEuropeData(data.reports[0].table[1]);
             var _totalConfirmedCases = data.reports[0].cases;
