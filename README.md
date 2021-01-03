@@ -10,9 +10,11 @@
 
 ## Covid19 Real Time News and Dashboard
 ### Description
-Follow all the news and track covid19 virus.
+Follow all the news and track covid19 virus and the COVID-19 vaccine.
 <br/>
 nCovid19.it is a live coronavirus dashboard tracker. Follow the url to see data, maps, social media trends, and learn about prevention measures.
+
+You can learn more about the Vaccine
 
 Coronavirus disease situation dashboard presents official daily counts of COVID-19 cases and deaths worldwide.
 
@@ -40,6 +42,20 @@ There are more then three COVID-19 vaccines for which certain national regulator
 Follow covid19 vaccin tracker for all the nations.
 
 The Covid19 Vaccine:
+* Pfizer/BioNTech
+* Moderna
+* Sputnik V
+* CNBG, Sinovac
+* Sinopharm
+
+If you want more news about the covid 19 vaccine go to the dashboard: [Covid19 Real Time Vaccine Tracker ](https://www.ncovid19.it/) 
+
+
+
+
+## Vaccino COVID-19
+Ora puoi seguire tutti i dati in tempo reale , tutti i Vaccini per il Coronavirus.
+Diversi stati in tutto il mondo stano sominnistrando i seguenti Vaccini contro il COVID-19:
 * Pfizer/BioNTech
 * Moderna
 * Sputnik V
