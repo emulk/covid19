@@ -24,7 +24,91 @@ class StatesNumbersComponent extends Component {
             debugger;
             return this.props.AllData.map((AllData, index) => {
                 const { ActiveCases, Continent, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, Unemployment, Vaccine } = AllData //destructuring
-                if (Country !== 'World' && Country !== 'Total:') {
+                if (Country === 'Europe') {
+                    return (
+                        <tr key={index} >
+                            <td>{Country}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{this.props.EuropeVaccineNum}</td>
+                        </tr>
+                    )
+                }if (Country === 'North America') {
+                    return (
+                        <tr key={index} >
+                            <td>{Country}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{this.props.nAmericaVaccineNum}</td>
+                        </tr>
+                    )
+                }if (Country === 'South America') {
+                    return (
+                        <tr key={index} >
+                            <td>{Country}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{this.props.sAmericaVaccineNum}</td>
+                        </tr>
+                    )
+                }if (Country === 'Asia') {
+                    return (
+                        <tr key={index} >
+                            <td>{Country}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{this.props.AsiaVaccineNum}</td>
+                        </tr>
+                    )
+                }if (Country === 'Africa') {
+                    return (
+                        <tr key={index} >
+                            <td>{Country}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{this.props.Africa}</td>
+                        </tr>
+                    )
+                }if (Country === 'Oceania') {
+                    return (
+                        <tr key={index} >
+                            <td>{Country}</td>
+                            <td className="totalConfirmedNumbers">{TotalCases}</td>
+                            <td className="activeCasesNumbers">{ActiveCases}</td>
+                            <td className="newCasesNumbers">{NewCases}</td>
+                            <td className="recoveredCasesNumbers">{TotalRecovered}</td>
+                            <td className="newDecesedNumbers">{TotalDeaths}</td>
+                            <td className="newDecesedNumbers">{NewDeaths}</td>
+                            <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{this.props.Oceania}</td>
+                        </tr>
+                    )
+                }else if (Country !== 'World' && Country !== 'Total:') {
 
                     return (
                         <tr key={index} >

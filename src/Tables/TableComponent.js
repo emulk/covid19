@@ -32,7 +32,14 @@ class TableComponent extends Component {
             UsaData: '',
             AsiaData: '',
             AfricaData: '',
-            OceaniaData: ''
+            OceaniaData: '',
+            EuropeVaccineNum:'',
+            UsaVaccineNum:'',
+            AsiaVaccineNum:'',
+            AfricaVaccineNum:'',
+            OceaniaVaccineNum:'',
+            nAmericaVaccineNum:'',
+            sAmericaVaccineNum:''
         };
         this.getUpdatedTimeData = this.getUpdatedTimeData.bind(this);
         this.getReportData = this.getReportData.bind(this);
@@ -106,21 +113,37 @@ class TableComponent extends Component {
     getEuropeData(data) {
         if (data) {
             var _europeData = [];
+            var _europeVaccineNum = 0;
             var _usaData = [];
             var _asiaData = [];
+            var _asiaVaccineNum = 0;
             var _africaData = [];
+            var _africaVaccineNum = 0;
             var _oceaniaData = [];
+            var _oceaniaVaccineNum = 0;
+            
+            var _nAmericaVaccineNum = 0;
+            var _sAmericaVaccineNum = 0;
             data.map((data, index) => {
                 const { Continent } = data //destructuring
                 if (Continent === 'Europe') {
+                    debugger;
+                    _europeVaccineNum += parseInt((data.Vaccine.toString()).replaceAll(",", ""));
                     _europeData.push(data);
-                } else if (Continent === 'North America' || Continent === 'South America') {
+                } else if (Continent === 'North America'){ 
+                    _nAmericaVaccineNum += parseInt((data.Vaccine.toString()).replaceAll(",", ""));
                     _usaData.push(data);
-                } else if (Continent === 'Asia') {
+                } else if ( Continent === 'South America'){
+                    _sAmericaVaccineNum += parseInt((data.Vaccine.toString()).replaceAll(",", ""));
+                    _usaData.push(data);
+                }else if (Continent === 'Asia') {
+                    _asiaVaccineNum += parseInt((data.Vaccine.toString()).replaceAll(",", ""));
                     _asiaData.push(data);
                 } else if (Continent === 'Africa') {
+                    _africaVaccineNum += parseInt((data.Vaccine.toString()).replaceAll(",", ""));
                     _africaData.push(data);
                 } else if (Continent === 'Australia\/Oceania') {
+                    _oceaniaVaccineNum += parseInt((data.Vaccine.toString()).replaceAll(",", ""));
                     _oceaniaData.push(data);
                 }
             });
@@ -131,7 +154,13 @@ class TableComponent extends Component {
                 AsiaData: _asiaData,
                 AfricaData: _africaData,
                 OceaniaData: _oceaniaData,
-                AllData: data
+                AllData: data,
+                EuropeVaccineNum:_europeVaccineNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                nAmericaVaccineNum:_nAmericaVaccineNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                sAmericaVaccineNum:_sAmericaVaccineNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                AsiaVaccineNum:_asiaVaccineNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                AfricaVaccineNum:_africaVaccineNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                OceaniaVaccineNum:_oceaniaVaccineNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             })
         }
 
@@ -163,23 +192,23 @@ class TableComponent extends Component {
                                     <NewsComponent />
                                 </Col>
                                 <Col className="col-md-9">
-                                    <StatesNumbersComponent AllData={this.state.AllData} Title='World Stats' />
+                                    <StatesNumbersComponent AllData={this.state.AllData} EuropeVaccineNum={this.state.EuropeVaccineNum} nAmericaVaccineNum={this.state.nAmericaVaccineNum} sAmericaVaccineNum={this.state.sAmericaVaccineNum} AsiaVaccineNum={this.state.AsiaVaccineNum} AfricaVaccineNum={this.state.AfricaVaccineNum} OceaniaVaccineNum={this.state.OceaniaVaccineNum} Title='World Stats' />
                                 </Col>
                             </Row>
                             <Row>
-                                <EuropeNumbersComponent AllData={this.state.EuropeData} Title='Europe Stats' />
+                                <EuropeNumbersComponent AllData={this.state.EuropeData} VaccineNum={this.state.EuropeVaccineNum} Title='Europe Stats' />
                             </Row>
                             <Row>
-                                <EuropeNumbersComponent AllData={this.state.UsaData} Title='America Stats' />
+                                <EuropeNumbersComponent AllData={this.state.UsaData} VaccineNum={this.state.nAmericaVaccineNum} VaccineNumSouth={this.state.sAmericaVaccineNum} Title='America Stats' />
                             </Row>
                             <Row>
-                                <EuropeNumbersComponent AllData={this.state.AsiaData} Title='Asia Stats' />
+                                <EuropeNumbersComponent AllData={this.state.AsiaData} VaccineNum={this.state.AsiaVaccineNum} Title='Asia Stats' />
                             </Row>
                             <Row>
-                                <EuropeNumbersComponent AllData={this.state.AfricaData} Title='Africa Stats' />
+                                <EuropeNumbersComponent AllData={this.state.AfricaData} VaccineNum={this.state.AfricaVaccineNum} Title='Africa Stats' />
                             </Row>
                             <Row>
-                                <EuropeNumbersComponent AllData={this.state.OceaniaData} Title='Oceania Stats' />
+                                <EuropeNumbersComponent AllData={this.state.OceaniaData} VaccineNum={this.state.OceaniaVaccineNum} Title='Oceania Stats' />
                             </Row>
                         </Col>
                     </Row>
