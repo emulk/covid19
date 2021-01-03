@@ -17,7 +17,7 @@ class EuropeNumbersComponent extends Component {
     fillTable() {
         if (this.props.AllData) {
             return this.props.AllData.map((AllData, index) => {
-                const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests, Unemployment } = AllData //destructuring
+                const { ActiveCases, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, TotalTests, Unemployment, Vaccine, VaccineName } = AllData //destructuring
 
                 return (
                     <tr key={index} >
@@ -31,6 +31,8 @@ class EuropeNumbersComponent extends Component {
                         <td className="newDecesedNumbers">{NewDeaths}</td>
                         <td className="testCasesNumbers">{TotalTests}</td>
                         <td className="unemploymentNumbers">{Unemployment}</td>
+                        <td className="vaccine">{Vaccine}</td>
+                        <td className="vaccineName">{VaccineName}</td>
                     </tr>
                 )
             })
@@ -61,6 +63,8 @@ class EuropeNumbersComponent extends Component {
                                     <th>{t('New Deceased')}</th>
                                     <th>{t('Tests')}</th>
                                     <th>{t('Unemployment')}</th>
+                                    <th>{t('Vaccine')}</th>
+                                    <th>{t('Vaccine Name')}</th>
                                 </tr>
                             </thead>
                             <tbody>

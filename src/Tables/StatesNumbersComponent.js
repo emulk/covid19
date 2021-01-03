@@ -21,8 +21,9 @@ class StatesNumbersComponent extends Component {
 
     fillTable() {
         if (this.props.AllData) {
+            debugger;
             return this.props.AllData.map((AllData, index) => {
-                const { ActiveCases, Continent, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, Unemployment } = AllData //destructuring
+                const { ActiveCases, Continent, Country, NewCases, NewDeaths, Population, TotalCases, TotalDeaths, TotalRecovered, Unemployment, Vaccine } = AllData //destructuring
                 if (Country !== 'World' && Country !== 'Total:') {
 
                     return (
@@ -35,6 +36,7 @@ class StatesNumbersComponent extends Component {
                             <td className="newDecesedNumbers">{TotalDeaths}</td>
                             <td className="newDecesedNumbers">{NewDeaths}</td>
                             <td className="unemploymentNumbers">{Unemployment}</td>
+                            <td className="vaccine">{Vaccine}</td>
                         </tr>
                     )
                 }
@@ -63,6 +65,7 @@ class StatesNumbersComponent extends Component {
                                     <th>{t('Deceased')}</th>
                                     <th>{t('New Deceased')}</th>
                                     <th>{t('Unemployment')}</th>
+                                    <th>{t('Vaccine')}</th>
                                 </tr>
                             </thead>
                             <tbody>

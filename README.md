@@ -31,6 +31,21 @@ www.ncovid19.it
 
 [Covid19 Real Time News ](https://www.ncovid19.it/) <br/>
 
+
+## RealTime Tracker Covid19 Vaccine
+The first COVID-19 vaccines are beginning to be introduced in countries, and  now you can follow the Vaccination campain in real time.
+
+There are more then three COVID-19 vaccines for which certain national regulatory authorities have authorized the use.
+
+Follow covid19 vaccin tracker for all the nations.
+
+The Covid19 Vaccine:
+* Pfizer/BioNTech
+* Moderna
+* Sputnik V
+* CNBG, Sinovac
+* Sinopharm
+
 ## Support
 
 - [One-time donation via PayPal](https://paypal.me/oshehaj?locale.x=en_US)

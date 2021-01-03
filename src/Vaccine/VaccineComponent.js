@@ -28,7 +28,7 @@ class Vaccine extends Component {
                     </Col>
                 </Row>
                 <Row className="vaccineDescription">
-                    {t('A vaccine to prevent coronavirus disease 2019 (COVID-19) is perhaps the best hope for ending the pandemic. Currently, there is no vaccine to prevent COVID-19, but researchers are racing to create one.')}
+                    {t('A vaccine to prevent coronavirus disease 2019 (COVID-19) is perhaps the best hope for ending the pandemic.')}
                 </Row>
 
                 <Row>

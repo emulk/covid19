@@ -47,7 +47,7 @@
     "Preferences": "Preferiti",
     "Landscape of COVID-19 candidate vaccines.": "Panorama dei vaccini candidati per il COVID-19.",
     "10 candidate vaccines in clinical evaluation.": "10 vaccini candidati nella valutazione clinica.",
-    "A vaccine to prevent coronavirus disease 2019 (COVID-19) is perhaps the best hope for ending the pandemic. Currently, there is no vaccine to prevent COVID-19, but researchers are racing to create one.": "Un vaccino per prevenire la malattia di coronavirus 2019 (COVID-19) è forse la migliore speranza per porre fine alla pandemia. Attualmente, non esiste un vaccino per prevenire COVID-19, ma i ricercatori stanno lavorando per crearne uno.",
+    "A vaccine to prevent coronavirus disease 2019 (COVID-19) is perhaps the best hope for ending the pandemic.": "Un vaccino per prevenire la malattia di coronavirus 2019 (COVID-19) è forse la migliore speranza per porre fine alla pandemia. Attualmente, ci sono tre vaccini COVID-19 per i quali alcune autorità nazionali ne hanno autorizzato l'uso. Vaccino Pfizer, Moderna e AstraZeneca.",
     "Platform": "Piattaforma",
     "Type of candidate vaccine": "Tipo di vaccino candidato",
     "Developer": "Sviluppatore",
@@ -92,6 +92,9 @@
     "Wash your hands, use an alcohol-based hand sanitiser with at least 60% alcohol by volume (or 120 proof) when soap and water are not readily available.":"Lavati le mani, usa un disinfettante per le mani a base di alcool con almeno il 60% di alcol in volume (o 120 prove) quando il sapone e l'acqua non sono prontamente disponibili.",
     "Stay at least 6 feet (about 2 arms’ length) from other people.":"Stare ad almeno 2 metri (circa 2 braccia) da altre persone.",
     "Do not gather in groups.":"Non radunarti in gruppo",
-    "Stay out of crowded places and avoid mass gatherings.":"Stai fuori dai luoghi affollati ed evita le riunioni di massa."
+    "Stay out of crowded places and avoid mass gatherings.":"Stai fuori dai luoghi affollati ed evita le riunioni di massa.",
+    "Vaccine":"Vaccino",
+    "Vaccine Name": "Nome Vaccino"
+
 
 }

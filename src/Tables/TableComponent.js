@@ -61,9 +61,9 @@ class TableComponent extends Component {
     }
 
     getReportData() {
-        //let url = "https://www.ncovid19.it/News/AllReports.php";
+        let url = "https://www.ncovid19.it/News/AllReports.php";
 
-        let url = "http://localhost/covid19api/api/v1/AllReports.php";
+        //let url = "http://localhost/covid19api/api/v1/AllReports.php";
         let data = undefined;
 
         fetch(url)
